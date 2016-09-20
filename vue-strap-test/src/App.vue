@@ -4,11 +4,16 @@
     <alert type="success">
       Success!
     </alert>
+
+    <button class="btn btn-success btn-lg" @click="showRight = true">Show Aside</button>
+    <aside :show.sync="showRight" placement="right" header="Title" width="350">
+      Something on the side
+    </aside>
   </div>
 </template>
 
 <script>
-import { alert } from 'vue-strap'
+import { alert, aside } from 'vue-strap'
 import 'bootstrap/dist/css/bootstrap.css'
 
 export default {
@@ -18,11 +23,13 @@ export default {
       // with hot-reload because the reloaded component
       // preserves its current state and we are modifying
       // its initial state.
-      msg: 'Hello Vue!'
+      msg: 'Hello Vue!',
+      showRight: false
     }
   },
   components: {
-    alert
+    alert,
+    aside
   }
 }
 </script>

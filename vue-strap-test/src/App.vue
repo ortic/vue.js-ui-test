@@ -9,11 +9,33 @@
     <aside :show.sync="showRight" placement="right" header="Title" width="350">
       Something on the side
     </aside>
+
+    <tabs>
+      <tab header="one">
+        Tab One
+      </tab>
+      <tab header="two" disabled>
+        Tab Two
+      </tab>
+      <tab-group header="group1">
+        <tab header="three">
+          Tab Three
+        </tab>
+        <tab header="four" disabled>
+          Tab Four
+        </tab>
+      </tab-group>
+      <tab-group header="group2">
+        <tab header="five">
+          Tab Five
+        </tab>
+      </tab-group>
+    </tabs>    
   </div>
 </template>
 
 <script>
-import { alert, aside } from 'vue-strap'
+import { alert, aside, tabset, tabGroup, tab } from 'vue-strap'
 import 'bootstrap/dist/css/bootstrap.css'
 
 export default {
@@ -29,7 +51,10 @@ export default {
   },
   components: {
     alert,
-    aside
+    aside,
+    tabs: tabset,
+    tabGroup,
+    tab
   }
 }
 </script>

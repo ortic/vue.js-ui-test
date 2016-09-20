@@ -1,10 +1,16 @@
 <template>
   <div id="app">
     <h1>{{ msg }}</h1>
+    <alert type="success">
+      Success!
+    </alert>
   </div>
 </template>
 
 <script>
+import { alert } from 'vue-strap'
+import 'bootstrap/dist/css/bootstrap.css'
+
 export default {
   data () {
     return {
@@ -14,6 +20,9 @@ export default {
       // its initial state.
       msg: 'Hello Vue!'
     }
+  },
+  components: {
+    alert
   }
 }
 </script>

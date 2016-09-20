@@ -30,12 +30,16 @@
           Tab Five
         </tab>
       </tab-group>
-    </tabs>    
+    </tabs>
+
+    <popover effect="fade" placement="right" title="Title" content="content">
+      <button class="btn btn-default">Popover</button>
+    </popover>    
   </div>
 </template>
 
 <script>
-import { alert, aside, tabset, tabGroup, tab } from 'vue-strap'
+import { alert, aside, tabset, tabGroup, tab, popover } from 'vue-strap'
 import 'bootstrap/dist/css/bootstrap.css'
 
 export default {
@@ -54,7 +58,8 @@ export default {
     aside,
     tabs: tabset,
     tabGroup,
-    tab
+    tab,
+    popover
   }
 }
 </script>

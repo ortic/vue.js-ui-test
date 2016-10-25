@@ -23,6 +23,11 @@
         <quasar-small-fab class="purple" @click.native="toast('mail')">mail</quasar-small-fab>
         <quasar-small-fab class="secondary" @click.native="toast('alarm')">alarm</quasar-small-fab>
       </quasar-fab>
+      <quasar-tree
+        :model="treeModel"
+        contract-html="<i>remove_circle</i>"
+        expand-html="<i>add_circle</i>"
+      ></quasar-tree>      
     </div>
   </quasar-layout>
 </template>
@@ -33,6 +38,47 @@ import { Toast } from 'quasar'
 export default {
   data () {
     return {
+      treeModel: [
+        {
+          title: 'Item 1',
+          expanded: true,
+          children: [
+            {
+              title: 'Item 1.1',
+              expanded: false,
+              children: [
+                {
+                  title: 'Item 1.1.1',
+                  expanded: false,
+                  children: [
+                    {
+                      title: 'Item 1.1.1.1',
+                      expanded: false,
+                      children: []
+                    }
+                  ]
+                },
+                {
+                  title: 'Item 1.1.2',
+                  expanded: false,
+                  handler () { console.log('Tapped on Item 1.1.2') },
+                  children: []
+                }
+              ]
+            },
+            {
+              title: 'Item 1.2',
+              expanded: false,
+              children: []
+            }
+          ]
+        },
+        {
+          title: 'Item 2',
+          expanded: false,
+          children: []
+        }
+      ]
     }
   },
   methods: {
